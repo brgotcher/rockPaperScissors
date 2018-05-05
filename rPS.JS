@@ -18,7 +18,13 @@ function round() {
 	let playerSelection = prompt("Rock, Paper, Scissors, SHOOT!");
 	playerSelection = playerSelection.toLowerCase();
 	let computer = computerPlay();
-	console.log(computer)
+	//what do if user's response is something else
+	if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+		playerSelection = prompt("Try again- Rock, Paper, Scissors, SHOOT!");
+		playerSelection = playerSelection.toLowerCase();
+	}
+	console.log("You chose " + playerSelection)
+	console.log("Computer chooses " + computer);
 	//tie game condition
 	if (playerSelection == computer) {
 		return "Tie!";
@@ -53,13 +59,19 @@ function round() {
 
 	//else- player chooses scissors
 	else {
+		//Scissors vs Rock
 		if (computer == "rock") {
 			return "Rock breaks Scissors! You lose!"
 			console.log("Rock braks Scissors! You lose!")
 		}
+		//Scissors vs paper
 		else if (computer == "paper") {
 			return "Scissors cut Paper! You win!"
 			console.log("Scissors cut Paper! You win!")
 		}
 	}
+}
+
+function game() {
+
 }
